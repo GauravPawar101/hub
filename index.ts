@@ -15,7 +15,7 @@ const VALIDATION_INTERVAL = 60 * 1000;
 const PAYOUT_INTERVAL = 15 * 60 * 1000; 
 const HEARTBEAT_TIMEOUT = 90 * 1000; 
 const SOLANA_RPC_URL = process.env.SOLANA_RPC_URL || "https://api.devnet.solana.com";
-
+const port = Number(process.env.PORT || 8081);
 const availableValidators = [];
 const CALLBACKS = {};
 const activeWebsites = new Map(); 
@@ -71,7 +71,7 @@ Bun.serve({
     
     return new Response("Not found", { status: 404 });
   },
-  port: 8081,
+  port,
   websocket: {
     async message(ws, message) {
       try {
