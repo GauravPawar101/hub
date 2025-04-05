@@ -12,6 +12,7 @@
   
     "scripts": {
       "build": "bunx prisma generate --schema=../../packages/db/schema.prisma && bun run build"
+    ,"start": "bash .glitch-start.sh"
     }
   
   
